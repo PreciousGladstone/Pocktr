@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poctr/widget/login.dart';
+import 'package:poctr/custom/custom_elevated_button.dart';
 
 
 class OnboardScreen extends StatelessWidget {
@@ -9,27 +10,27 @@ class OnboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(28, 40, 74, 8),
+      backgroundColor: const Color.fromARGB(255, 28, 40, 74),
       body: SafeArea(
         child: Container(
           width: double.maxFinite,
           padding: const EdgeInsets.only(
-            left: 20,
-            right: 20,
+            left: 21,
+            right: 21,
             bottom: 92,
           ),
           child: Column(
             children: [
-              const SizedBox(height: 70),
+              const SizedBox(height: 200),
 
               // Add Image Widget
               Image.asset(
-                'assets/images/login_images.png', // Replace with your image path
-                height: 375,
+                'assets/images/onboard_image.png', // Replace with your image path
+                height: 264.48,
                 width: double.maxFinite,
               ),
               const SizedBox(
-                height: 70,
+                height: 48.5,
               ),
               const Text(
                 'Manage all your finances from the comfort of your pocket with pocktr',
@@ -43,30 +44,23 @@ class OnboardScreen extends StatelessWidget {
               SizedBox(
                 height: 55,
                 width: double.maxFinite,
-                child: ElevatedButton(
+                child: CustomElevatedButton(
+                  foregroundColor: const Color.fromARGB(255, 28, 40, 74),
+                  backgroundColor: Colors.white,
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      elevation: 0,
-                      padding: EdgeInsets.zero),
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
-                  ),
+                  fontSize: 18,
+                  elevatedButtontext: 'Get Started',
+                  fontWeight: FontWeight.w500,
                 ),
               ),
               const SizedBox(
-                height: 25,
+                height: 15,
               ),
               SizedBox(
                 height: 55,
                 width: double.maxFinite,
                 child: OutlinedButton(
-                  onPressed: onTapLogIn(context),
+                  onPressed: () => onTapLogIn(context),
                   style: OutlinedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),),
